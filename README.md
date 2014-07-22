@@ -13,7 +13,7 @@ For this library I've borrowed the API structure from the popular Arduino I2C ["
 An important warning to note, however, is this I2C implementation is *slow*. I'm trying to figure out what to do about this, but since the only legal NXT -> Protoboard connection is via I2C, this means that I have to write a full byte to the Protoboard for every time either the SDA or SCL pin changes state (which happens very rapidly for high-speed communication). More info about this can be found in the Disclaimers section.
 
 ## Usage
-To include HTSPB-I2C in your RobotC project, put the file i2c.h and the drivers folder in your project directory. Then put 
+To include HTSPB-I2C in your RobotC project, put the file i2c.h and the drivers folder in your project directory (both of these can be found under the folder "i2c"). Then put 
 
     #include "i2c.h"
 
@@ -52,7 +52,7 @@ As mentioned previously, this library is used in a similar way to the Arduino Wi
 
 As you can see, the function names and parameters are pretty much identical between the RobotC and Arduino versions, except "Wire." is replaced by the "i2c_" prefix. 
 
-For an example of how a full I2C Arduino example can be translated into RobotC, compare the included file compass.ino with the file i2c-example.c. 
+For an example of how a full I2C Arduino example can be translated into RobotC, compare the two files included in the "examples" folder.
 
 ## Disclaimers
 The most important thing to watch out for is the fact that this library is *slow*. As mentioned above, I'm trying to figure out what to do about this, but since the only legal NXT to Protoboard connection is via I2C, this means that I have to write a full byte to the Protoboard for every time either the SDA or SCL pin changes state (which happens very rapidly for high-speed communication).
