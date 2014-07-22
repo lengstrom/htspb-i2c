@@ -36,7 +36,7 @@ ubyte _i2c_rxBufferLen = 0;
  * @param sda - which digital pin (from 0-7) is being used as the SDA pin
  * @param scl - which digital pin (from 0-7) is being used as the SCL pin
  */
-void i2c_begin(tSensors HTSPB, int sda, int scl); // init I2C and join bus as master
+void i2c_begin(tSensors HTSPB, int sda, int scl); 
 
 /**
  * Send start sequence and address of slave to begin sending data
@@ -49,7 +49,7 @@ void i2c_beginTransmission(ubyte address);
 /**
  * Send stop sequence
  */
-void i2c_endTransmission(); // send stop sequence
+void i2c_endTransmission(); 
 
 /**
 	* Write byte to slave
@@ -74,22 +74,22 @@ int i2c_write(ubyte *values, int length);
 int i2c_write(char *str);
 
 /**
- 	* Read bytes from slave into RX buffer
- 	* @param address - address of slave
- 	* @param quantity - number of bytes to request
- 	* @return - number of bytes received
- 	*/
+  * Read bytes from slave into RX buffer
+  * @param address - address of slave
+  * @param quantity - number of bytes to request
+  * @return - number of bytes received
+  */
 ubyte i2c_requestFrom(ubyte address, int quantity);
 
 /**
   * @return - number of bytes in RX buffer
   */
-int i2c_available(); // returns number of unread bytes in the read buffer
+int i2c_available(); 
 
 /**
-	* @return - the oldest byte in RX buffer
-	*/
-ubyte i2c_read();	// return first byte in read buffer
+  * @return - the oldest byte in RX buffer
+  */
+ubyte i2c_read();	
 
 // internal functions to handle I/O
 void _i2c_sda_write(bool val);
